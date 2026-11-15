@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-const API_URL = 'http://10.214.160.126:8000';
+// Set EXPO_PUBLIC_API_URL in app/.env to your computer's LAN address, e.g. http://192.168.1.20:8000
+const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:8000';
 
 export default function App() {
   const [status, setStatus] = useState('Not checked yet');
